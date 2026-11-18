@@ -10,8 +10,14 @@ turns it into clean Markdown tables: the key numbers, the filters and every row,
 - **Setup guide:** https://nordrax.com/seo-page-to-ai/setup
 - **Website:** https://nordrax.com/seo-page-to-ai
 
-No account, no Nordrax server, no tracking. It uses your own login and plan in your own browser, so no API units.
-Your passwords and cookies never leave the browser.
+### Use the Semrush and Ahrefs plan you already pay for, no API units
+
+Getting SEO data into Claude or ChatGPT usually means API access: Semrush sells API units on top of its Business plan,
+and Ahrefs only includes its API on its top tier. SEO Page to AI reads the reports in the web interface you already use,
+with your own login. No API key, no extra units, no extra plan. (Reports still count toward your plan's normal daily
+report limit.)
+
+No account, no Nordrax server, no tracking. Your passwords and cookies never leave the browser.
 
 ## Three ways to use it
 
