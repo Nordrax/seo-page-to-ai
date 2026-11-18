@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "SEO Page to AI",
+  "version": "0.4.5",
+  "description": "Send the SEO report you are looking at to Claude or ChatGPT as clean tables, or save it for your AI app.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab",
+    "alarms",
+    "contextMenus",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://*.semrush.com/*",
+    "https://app.ahrefs.com/*",
+    "https://search.google.com/*",
+    "https://analytics.google.com/*",
+    "https://pro.similarweb.com/*",
+    "https://*.moz.com/*",
+    "https://www.bing.com/webmasters/*",
+    "https://claude.ai/*",
+    "https://chatgpt.com/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SEO Page to AI",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

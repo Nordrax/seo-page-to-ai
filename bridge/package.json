@@ -1,0 +1,14 @@
+{
+  "name": "seo-page-to-ai-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local MCP bridge between your AI (Claude, Cursor, any MCP client) and the SEO Page to AI browser extension.",
+  "bin": { "seo-page-to-ai": "server.mjs" },
+  "scripts": { "start": "node server.mjs", "key": "node server.mjs --key" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.17.0",
+    "ws": "8.18.0",
+    "zod": "3.23.8"
+  }
+}

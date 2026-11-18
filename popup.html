@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --ink:#16211b; --muted:#5d6a62; --line:#dfe4de; --accent:#1f7a4d; --bg:#fbfcfa; }
+  body { font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); margin: 0; width: 340px; }
+  main { padding: 14px; display: grid; gap: 12px; }
+  h1 { font-size: 15px; margin: 0; }
+  .status { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #c33; flex: none; }
+  .dot.on { background: var(--accent); }
+  label { font-weight: 600; font-size: 12px; }
+  input { width: 100%; box-sizing: border-box; padding: 7px 8px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+  button { padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: #fff; font: 600 12px system-ui; cursor: pointer; }
+  button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .muted { color: var(--muted); font-size: 12px; }
+  select, textarea { box-sizing: border-box; padding: 7px 8px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; }
+  textarea { width: 100%; resize: vertical; }
+  .send { display: grid; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  .grow { flex: 1; }
+  details.ideas { border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 8px 10px; }
+  details.ideas summary { font-weight: 600; font-size: 12px; cursor: pointer; }
+  .ideas h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 10px 0 4px; }
+  .ideas ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .ideas li button { width: 100%; text-align: left; font: 12px/1.35 system-ui, sans-serif; padding: 6px 8px; }
+  .ideas li button:hover { border-color: var(--accent); }
+  pre { max-height: 140px; overflow: auto; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px; font-size: 11px; white-space: pre-wrap; margin: 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SEO Page to AI</h1>
+  <div class="status"><span id="dot" class="dot"></span><span id="status">Checking…</span></div>
+  <div>
+    <label for="token">Bridge key</label>
+    <input id="token" type="password" placeholder="Paste your bridge key" autocomplete="off">
+    <div class="row" style="margin-top:6px"><button id="save">Save key</button><button id="retry">Reconnect</button></div>
+    <p class="muted" style="margin:6px 0 0">Only needed to connect Claude desktop, Claude Code or Cursor. <a href="https://nordrax.com/seo-page-to-ai/setup" target="_blank" rel="noopener">How do I get a key?</a></p>
+  </div>
+  <div class="send">
+    <label for="question">Send this report to</label>
+    <div class="row">
+      <select id="target"><option value="code">Claude Code (save)</option><option value="claude">Claude (web)</option><option value="chatgpt">ChatGPT (web)</option></select>
+      <button id="send" class="primary grow">Send</button>
+    </div>
+    <textarea id="question" rows="3" placeholder="Your question (optional) - default: key findings + 5 actions"></textarea>
+    <div id="sendStatus" class="muted" hidden></div>
+  </div>
+  <details class="ideas" id="ideas">
+    <summary>What to ask - examples</summary>
+    <h2>Send to Claude / ChatGPT (click to use)</h2>
+    <ul id="ideasSend"></ul>
+    <h2>Claude desktop, Claude Code, Cursor (click to copy)</h2>
+    <ul id="ideasDirect"></ul>
+    <p class="muted" style="margin:8px 0 0">Tip: say which site it is and your goal, e.g. "This is my shop in Norway; I want more traffic to category pages."</p>
+  </details>
+  <div>
+    <label for="browseMode">Reports your AI opens</label>
+    <select id="browseMode"><option value="visible">Show in a tab (you watch)</option><option value="background">Hidden (minimized window)</option></select>
+  </div>
+  <div class="row">
+    <button id="capture">Read this page</button>
+    <button id="copy" disabled>Copy for AI</button>
+    <button id="csv" disabled>CSV</button>
+  </div>
+  <pre id="preview" hidden></pre>
+  <p class="muted">Claude Code (save) writes the report to Downloads\seo-captures - ask Claude Code in VS Code to read it. Claude / ChatGPT (web) open a new tab and send it there. Right-click a report for the same. Reads only the report you see. Your AI can also open reports on allowed SEO sites through the bridge, at human pace, in a visible tab or (your choice) a minimized window. Your logins never leave this browser.</p>
+</main>
+<script src="extract.js"></script>
+<script src="format.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
