@@ -1,5 +1,7 @@
 # SEO Page to AI
 
+[![Nordrax/seo-page-to-ai MCP server](https://glama.ai/mcp/servers/Nordrax/seo-page-to-ai/badges/score.svg)](https://glama.ai/mcp/servers/Nordrax/seo-page-to-ai)
+
 **Send the SEO report you are looking at to Claude or ChatGPT - or let Claude read your open SEO tabs itself.**
 
 A Chrome extension plus an optional local [MCP](https://modelcontextprotocol.io) bridge. It reads the report on your
