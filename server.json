@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Nordrax/seo-page-to-ai",
+  "title": "SEO Page to AI",
+  "description": "Read your open Semrush, Ahrefs and Search Console reports in Claude, using your own login.",
+  "websiteUrl": "https://nordrax.com/seo-page-to-ai",
+  "repository": { "url": "https://github.com/Nordrax/seo-page-to-ai", "source": "github" },
+  "version": "0.4.5",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/Nordrax/seo-page-to-ai/releases/download/v0.4.5/seo-page-to-ai-mcp.mcpb",
+      "fileSha256": "d9ce29f0647a981a075e7192647fe7086d2c24db73decc7b4250192606960b32",
+      "transport": { "type": "stdio" }
+    }
+  ]
+}
